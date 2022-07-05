@@ -31,39 +31,39 @@ public class Video implements AcoesVideo{
         return titulo;
     }
     
-    public void setTitulo(String titulo) {
+    protected void setTitulo(String titulo) {
         this.titulo = titulo;
     }
     
-    public String getAvaliacao() {
+    protected String getAvaliacao() {
         return avaliacao;
     }
 
-    public void setAvaliacao(String avaliacao) {
+    protected void setAvaliacao(String avaliacao) {
         this.avaliacao = avaliacao;
     }
 
-    public int getViews() {
+    protected int getViews() {
         return views;
     }
 
-    public void setViews(int views) {
+    protected void setViews(int views) {
         this.views = views;
     }
 
-    public int getCurtidas() {
+    protected int getCurtidas() {
         return curtidas;
     }
 
-    public void setCurtidas(int curtidas) {
+    protected void setCurtidas(int curtidas) {
         this.curtidas += curtidas;
     }
  
-    public boolean getReproduzindo() {
+    protected boolean getReproduzindo() {
         return reproduzindo;
     }
 
-    public void setReproduzindo(boolean reproduzindo) {
+    protected void setReproduzindo(boolean reproduzindo) {
         this.reproduzindo = reproduzindo;
     }
 
