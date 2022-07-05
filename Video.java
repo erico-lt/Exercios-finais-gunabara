@@ -27,7 +27,7 @@ public class Video implements AcoesVideo{
     }
 
     //Metodos gets e sets        
-    public String getTitulo() {
+    protected String getTitulo() {
         return titulo;
     }
     
