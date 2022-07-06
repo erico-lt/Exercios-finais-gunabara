@@ -10,6 +10,15 @@ public class Video implements AcoesVideo{
         this.views += 1;
     }
 
+    //Status atual do do video
+    public String status(){
+        return "Titulo: " + this.getTitulo() + 
+        "\n Avaliação: " + this.getAvaliacao() + 
+        "\n Views: " + this.getViews() + 
+        "\n Curtidas:" + this.getCurtidas() + 
+        "\n Reproduzindo: " + this.getReproduzindo();
+    } 
+
     //Metodos de sobreescrever
     @Override
     public void play(){
@@ -26,12 +35,17 @@ public class Video implements AcoesVideo{
         this.setCurtidas(1);
     }
 
+    @Override
+    public void avaliar(String avaliar){
+        this.avaliacao = avaliar;
+    }
+
     //Metodos gets e sets        
-    protected String getTitulo() {
+    public String getTitulo() {
         return titulo;
     }
     
-    protected void setTitulo(String titulo) {
+    public void setTitulo(String titulo) {
         this.titulo = titulo;
     }
     
