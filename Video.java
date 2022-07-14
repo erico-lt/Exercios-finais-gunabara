@@ -1,23 +1,18 @@
 public class Video implements AcoesVideo{
     private String titulo;
-    private String avaliacao;
+    private int avaliacao;
     private int views;
     private int curtidas;
     private boolean reproduzindo;
 
     //Metodos Construtor, sempre que um video for iniciado ele ganhará uma visualização
-    public Video(){
-        this.views += 1;
-    }
-
-    //Status atual do do video
-    public String status(){
-        return "Titulo: " + this.getTitulo() + 
-        "\n Avaliação: " + this.getAvaliacao() + 
-        "\n Views: " + this.getViews() + 
-        "\n Curtidas:" + this.getCurtidas() + 
-        "\n Reproduzindo: " + this.getReproduzindo();
-    } 
+    public Video(String titulo){
+        this.titulo = titulo;
+        this.avaliacao = 1;
+        this.views = 0;
+        this.curtidas = 0;
+        this.reproduzindo = false;
+    }    
 
     //Metodos de sobreescrever
     @Override
@@ -33,12 +28,7 @@ public class Video implements AcoesVideo{
     @Override
     public void like(){
         this.setCurtidas(1);
-    }
-
-    @Override
-    public void avaliar(String avaliar){
-        this.avaliacao = avaliar;
-    }
+    }   
 
     //Metodos gets e sets        
     public String getTitulo() {
@@ -49,12 +39,12 @@ public class Video implements AcoesVideo{
         this.titulo = titulo;
     }
     
-    protected String getAvaliacao() {
+    protected int getAvaliacao() {
         return avaliacao;
     }
 
-    protected void setAvaliacao(String avaliacao) {
-        this.avaliacao = avaliacao;
+    protected void setAvaliacao(int avaliacao) {
+        this.avaliacao = (int) ((this.getAvaliacao() + avaliacao ) / this.views);
     }
 
     protected int getViews() {
@@ -80,5 +70,15 @@ public class Video implements AcoesVideo{
     protected void setReproduzindo(boolean reproduzindo) {
         this.reproduzindo = reproduzindo;
     }
+
+    //Status atual do do video
+    @Override
+    public String toString(){
+        return " Titulo: " + this.getTitulo() + 
+        "\n Avaliação: " + this.getAvaliacao() + 
+        "\n Views: " + this.getViews() + 
+        "\n Curtidas:" + this.getCurtidas() + 
+        "\n Reproduzindo: " + this.getReproduzindo();
+    } 
 
 }
