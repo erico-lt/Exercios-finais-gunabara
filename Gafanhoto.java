@@ -3,8 +3,8 @@ public class Gafanhoto extends Pessoa{
     private String login;
     private int totAssistido;
 
-    public Gafanhoto(String nome, String sexo, int idade, String login) {
-        super(nome, sexo, idade);
+    public Gafanhoto(String nome, String sexo, int idade, int experiencia, String login) {
+        super(nome, sexo, idade, experiencia);
         this.setLogin(login);
         this.setTotAssistindo(0);
     }
